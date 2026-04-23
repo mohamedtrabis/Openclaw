@@ -1,9 +1,4 @@
-```
-# Dependencies
-vendor/
-composer.lock
-
-# Environment
+# Environment and config files
 .env
 .env.local
 .env.*
@@ -11,26 +6,207 @@ composer.lock
 # Logs
 *.log
 
-# Editor
-.vscode/
-.idea/
-*.swp
-*.swo
-*.tmp
-
-# OS
-.DS_Store
-Thumbs.db
+# Dependencies
+node_modules/
+vendor/
 
 # Build artifacts
 dist/
 build/
-*.o
-*.obj
-*.out
+*.min.js
+*.bundle.js
 
-# PHP specific
-*.php~
-phpunit.xml.dist
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# System files
+.DS_Store
+Thumbs.db
+*~
+.DS_Store?
+ehthumbs.db
+Icon?
+.directory
+.Trashes
+*.nib
+settings.xml*
+security.xml*
+
+# Coverage reports
 coverage/
-```
+*.gcov
+*.lcov
+*.profdata
+*.coverage
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Sage
+home/
+.sage/
+
+# Environments
+.envrc
+.gitlab-ci.yml
+mkdocs.yml
+vercel.json
+netlify.toml
+.fly.toml
+appspec.yml
+Procfile
+Dockerfile
+docker-compose.yml
+nginx.conf
+httpd.conf
+*.ini
+*.cfg
+*.conf
+Makefile
+CMakeLists.txt
+cmake_install_manifest.txt
+CMakeCache.txt
+*.cmake
+*.pc
+*.pc.in
+configure
+config.status
+config.log
+autom4te.cache/
+.libs/
+.deps/
+.libs
+.libs/
+.libs/*
+.libs/*.*
+.libs/*.so
+.libs/*.dylib
+.libs/*.dll
+.libs/*.a
+.libs/*.lib
+.libs/*.obj
+.libs/*.o
+.libs/*.la
+.libs/*.lo
+.libs/*.lai
+.libs/*.lao
+.libs/*.tcl
+.libs/lib*.sh
+.libs/lib*.so.*
+.libs/lib*.dylib.*
+.libs/lib*.dll.*
+.libs/lib*.a.*
+.libs/lib*.lib.*
+.libs/lib*.obj.*
+.libs/lib*.o.*
+.libs/lib*.la.*
+.libs/lib*.lo.*
+.libs/lib*.lai.*
+.libs/lib*.lao.*
+.libs/lib*.tcl.*
+.libs/lib*.sh.*
+.libs/lib*.so.*.*
+.libs/lib*.dylib.*.*
+.libs/lib*.dll.*.*
+.libs/lib*.a.*.*
+.libs/lib*.lib.*.*
+.libs/lib*.obj.*.*
+.libs/lib*.o.*.*
+.libs/lib*.la.*.*
+.libs/lib*.lo.*.*
+.libs/lib*.lai.*.*
+.libs/lib*.lao.*
+.libs/lib*.tcl.*.*
+.libs/lib*.sh.*.*
