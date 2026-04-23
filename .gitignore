@@ -1,1 +1,36 @@
-(empty)
+```
+# Dependencies
+vendor/
+composer.lock
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.o
+*.obj
+*.out
+
+# PHP specific
+*.php~
+phpunit.xml.dist
+coverage/
+```
