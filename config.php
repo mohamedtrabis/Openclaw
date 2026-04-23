@@ -4,7 +4,7 @@
  */
 
 // Database configuration
-define('DB_HOST', 'localhost');
+define('DB_HOST', '82.165.167.114');
 define('DB_NAME', 'luxury_travel');
 define('DB_USER', 'root');
 define('DB_PASS', '');
@@ -12,7 +12,7 @@ define('DB_CHARSET', 'utf8mb4');
 
 // Application settings
 define('APP_NAME', 'Luxe Voyage');
-define('APP_URL', 'http://localhost/luxury-travel');
+define('APP_URL', 'http://82.165.167.114/luxury-travel');
 define('APP_ENV', 'development'); // development or production
 
 // API Keys (placeholder - replace with actual keys)
