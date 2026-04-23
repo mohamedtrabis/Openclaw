@@ -12,8 +12,8 @@ define('DB_CHARSET', 'utf8mb4');
 
 // Application settings
 define('APP_NAME', 'Luxe Voyage');
-define('APP_URL', 'http://82.165.167.114/luxury-travel');
-define('APP_ENV', 'development'); // development or production
+define('APP_URL', 'http://82.165.167.114/Openclaw-main');
+define('APP_ENV', 'production'); // development or production
 
 // API Keys (placeholder - replace with actual keys)
 define('GOOGLE_MAPS_API_KEY', 'YOUR_GOOGLE_MAPS_API_KEY');
