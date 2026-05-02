@@ -1,17 +1,17 @@
 /**
- * Luxury Travel - Main JavaScript
- * Handles navbar, interactions and form logic
+ * Luxury Travel - Premium JavaScript
+ * Enhanced interactions, animations, and smooth UX
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Navbar scroll effect
+    // Navbar scroll effect with class toggle
     const navbar = document.querySelector('.navbar');
     
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.style.backgroundColor = 'rgba(26, 26, 46, 0.98)';
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.backgroundColor = '#1a1a2e';
+            navbar.classList.remove('scrolled');
         }
     });
 
@@ -22,8 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
+            this.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
     }
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
+    });
 
     // Form validation for planning form
     const planForm = document.getElementById('plan-form');
@@ -61,29 +72,60 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for anchor links with offset
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
 
-    // Card hover effects enhancement
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
         });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+    }, observerOptions);
+
+    // Observe elements with animation classes
+    document.querySelectorAll('.animate-on-scroll, .fade-in, .card, .service-card').forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+    });
+
+    // Parallax effect for hero section
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+        });
+    }
+
+    // Add staggered animation delay to cards
+    const cardGrids = document.querySelectorAll('.card-grid');
+    cardGrids.forEach(grid => {
+        const cards = grid.querySelectorAll('.card, .service-card');
+        cards.forEach((card, index) => {
+            card.style.transitionDelay = (index * 0.1) + 's';
         });
     });
 });
